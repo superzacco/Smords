@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "":
+        {
+            "model": "smords:block/spearmint_planks"
+        }
+    }
+}
