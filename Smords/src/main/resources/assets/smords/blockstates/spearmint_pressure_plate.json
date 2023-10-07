@@ -1,10 +1,10 @@
 {
   "variants": {
     "powered=false": {
-      "model": "minecraft:block/spearmint_pressure_plate"
+      "model": "smords:block/spearmint_pressure_plate"
     },
     "powered=true": {
-      "model": "minecraft:block/spearmint_pressure_plate_down"
+      "model": "smords:block/spearmint_pressure_plate_down"
     }
   }
 }

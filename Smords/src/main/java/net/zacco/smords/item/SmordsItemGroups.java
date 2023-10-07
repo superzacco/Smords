@@ -15,11 +15,9 @@ public class SmordsItemGroups
     public static final ItemGroup SMORDS_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(Smords.MOD_ID, "smords"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.smords"))
-                    .icon(() -> new ItemStack(SmordsItems.TEST_INGOT)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(SmordsBlocks.SPEARMINT_PLANKS)).entries((displayContext, entries) -> {
 
                         //#region ITEMS
-                        entries.add(SmordsItems.TEST_INGOT);
-                        entries.add(SmordsItems.SLUDGE);
                         //#endregion
 
                         //#region BLOCKS
@@ -28,6 +26,11 @@ public class SmordsItemGroups
                         entries.add(SmordsBlocks.SPEARMINT_WOOD);
                         entries.add(SmordsBlocks.STRIPPED_SPEARMINT_LOG);
                         entries.add(SmordsBlocks.STRIPPED_SPEARMINT_WOOD);
+                        entries.add(SmordsBlocks.SPEARMINT_BUTTON);
+                        entries.add(SmordsBlocks.SPEARMINT_PRESSURE_PLATE);
+                        entries.add(SmordsBlocks.SPEARMINT_FENCE);
+                        entries.add(SmordsBlocks.SPEARMINT_FENCE_GATE);
+
                         //#endregion
 
                     }).build());

@@ -7,6 +7,10 @@
     "block.smords.spearmint_wood": "Spearmint Wood",
     "block.smords.stripped_spearmint_log": "Stripped Spearmint Log",
     "block.smords.stripped_spearmint_wood": "Stripped Spearmint Wood",
+    "block.smords.spearmint_button": "Spearmint Button",
+    "block.smords.spearmint_pressure_plate": "Spearmint Pressure Plate",
+    "block.smords.spearmint_fence": "Spearmint Fence",
+    "block.smords.spearmint_fence_gate": "Spearmint Fence Gate",
 
     "itemgroup.smords": "Smords"
 }
