@@ -3,6 +3,10 @@
     "item.smords.sludge": "Sludge",
 
     "block.smords.spearmint_planks": "Spearmint Planks",
+    "block.smords.spearmint_log": "Spearmint Log",
+    "block.smords.spearmint_wood": "Spearmint Wood",
+    "block.smords.stripped_spearmint_log": "Stripped Spearmint Log",
+    "block.smords.stripped_spearmint_wood": "Stripped Spearmint Wood",
 
     "itemgroup.smords": "Smords"
 }

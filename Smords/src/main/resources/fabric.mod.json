@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.zacco.Smords"
+			"net.zacco.smords.Smords"
 		],
 		"fabric-datagen": [
-			"net.zacco.SmordsDataGenerator"
+			"net.zacco.smords.SmordsDataGenerator"
 		]
 	},
 	"mixins": [

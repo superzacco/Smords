@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "smords:block/stripped_spearmint_log_top",
+    "side": "smords:block/stripped_spearmint_log_side"
+  }
+}

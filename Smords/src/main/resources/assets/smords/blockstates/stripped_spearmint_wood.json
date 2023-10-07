@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "smords:block/stripped_spearmint_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "smords:block/stripped_spearmint_wood"
+    },
+    "axis=z": {
+      "model": "smords:block/stripped_spearmint_wood_horizontal",
+      "x": 90
+    }
+  }
+}

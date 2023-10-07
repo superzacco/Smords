@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "smords:block/stripped_spearmint_log_side"
+  }
+}

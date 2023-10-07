@@ -22,14 +22,15 @@ public class SmordsItemGroups
                         entries.add(SmordsItems.SLUDGE);
                         //#endregion
 
-
-
                         //#region BLOCKS
                         entries.add(SmordsBlocks.SPEARMINT_PLANKS);
+                        entries.add(SmordsBlocks.SPEARMINT_LOG);
+                        entries.add(SmordsBlocks.SPEARMINT_WOOD);
+                        entries.add(SmordsBlocks.STRIPPED_SPEARMINT_LOG);
+                        entries.add(SmordsBlocks.STRIPPED_SPEARMINT_WOOD);
                         //#endregion
 
                     }).build());
-
 
     public static void RegisterSmordsItemGroups()
     {
