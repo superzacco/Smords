@@ -3,7 +3,9 @@
 	"package": "net.zacco.smords.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"SignTypeAccessor",
+		"BlockTypeEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
