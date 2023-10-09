@@ -5,7 +5,7 @@
 	"mixins": [
 		"ExampleMixin",
 		"SignTypeAccessor",
-		"BlockTypeEntityMixin"
+		"BlockEntityTypeMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

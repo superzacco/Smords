@@ -26,10 +26,10 @@ public class SmordsBlocks
     public static final Block SPEARMINT_PRESSURE_PLATE = RegisterBlock("spearmint_pressure_plate", new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
     public static final Block SPEARMINT_FENCE = RegisterBlock("spearmint_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
     public static final Block SPEARMINT_FENCE_GATE = RegisterBlock("spearmint_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
-    public static final Block SPEARMINT_SIGN = RegisterBlockNoItem("spearmint_sign", new SignBlock(FabricBlockSettings.copyOf(Blocks.OAK_SIGN), SmordsSignTypes.SPEARMINT));
-    public static final Block SPEARMINT_SIGN_WALL = RegisterBlockNoItem("spearmint_sign_wall", new WallSignBlock(FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN), SmordsSignTypes.SPEARMINT));
-    public static final Block SPEARMINT_HANGING_SIGN = RegisterBlockNoItem("spearmint_hanging_sign", new HangingSignBlock(FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN), SmordsSignTypes.SPEARMINT));
-    public static final Block SPEARMINT_WALL_HANGING_SIGN = RegisterBlockNoItem("spearmint_wall_hanging_sign", new WallHangingSignBlock(FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN), SmordsSignTypes.SPEARMINT));
+    //public static final Block SPEARMINT_SIGN = RegisterBlockNoItem("spearmint_sign", new SignBlock(FabricBlockSettings.copyOf(Blocks.OAK_SIGN), SmordsSignTypes.SPEARMINT));
+    //public static final Block SPEARMINT_SIGN_WALL = RegisterBlockNoItem("spearmint_sign_wall", new WallSignBlock(FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN), SmordsSignTypes.SPEARMINT));
+    //public static final Block SPEARMINT_HANGING_SIGN = RegisterBlockNoItem("spearmint_hanging_sign", new HangingSignBlock(FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN), SmordsSignTypes.SPEARMINT));
+    //public static final Block SPEARMINT_WALL_HANGING_SIGN = RegisterBlockNoItem("spearmint_wall_hanging_sign", new WallHangingSignBlock(FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN), SmordsSignTypes.SPEARMINT));
     //#endregion
 
     private static Block RegisterBlock(String name, Block block)

@@ -16,8 +16,8 @@ import net.zacco.smords.block.SmordsBlocks;
 
 public class SmordsItems
 {
-    public static final Item SPEARMINT_SIGN = RegisterItem("spearmint_sign", new SignItem(SmordsBlocks.SPEARMINT_SIGN, SmordsBlocks.SPEARMINT_SIGN_WALL, new FabricItemSettings().maxCount(16)));
-    public static final Item SPEARMINT_HANGING_SIGN = RegisterItem("spearmint_hanging_sign", new HangingSignItem(SmordsBlocks.SPEARMINT_HANGING_SIGN, SmordsBlocks.SPEARMINT_WALL_HANGING_SIGN, new FabricItemSettings().maxCount(16)));
+    // public static final Item SPEARMINT_SIGN = RegisterItem("spearmint_sign", new SignItem(new FabricItemSettings().maxCount(16), SmordsBlocks.SPEARMINT_SIGN, SmordsBlocks.SPEARMINT_SIGN_WALL));
+    // public static final Item SPEARMINT_HANGING_SIGN = RegisterItem("spearmint_hanging_sign", new HangingSignItem(SmordsBlocks.SPEARMINT_HANGING_SIGN, SmordsBlocks.SPEARMINT_WALL_HANGING_SIGN, new FabricItemSettings().maxCount(16)));
 
     private static Item RegisterItem(String name, Item item)
     {
