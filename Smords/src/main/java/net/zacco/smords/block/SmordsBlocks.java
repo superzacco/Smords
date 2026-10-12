@@ -33,6 +33,7 @@ public class SmordsBlocks
     public static final Block SPEARMINT_LEAVES = RegisterBlock("spearmint_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
     public static final Block SPEARMINT_SAPLING = RegisterBlock("spearmint_sapling", new SmordsSaplingBlock(new SpearmintSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
     public static final Block SPEARMINT_BULB = RegisterBlock("spearmint_bulb", new Block(FabricBlockSettings.copyOf(Blocks.SHROOMLIGHT).mapColor(MapColor.EMERALD_GREEN).luminance(13)));
+    public static final Block SPEARMINT_REFINERY = RegisterBlockNoItem("spearmint_refinery", new SpearmintRefineryBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
     public static final Block POTTED_SPEARMINT_SAPLING = RegisterBlockNoItem("potted_spearmint_sapling", new FlowerPotBlock(SPEARMINT_SAPLING, FabricBlockSettings.copyOf(Blocks.POTTED_OAK_SAPLING)));
     public static final Block SPEARMINT_STAIRS = RegisterBlock("spearmint_stairs", new StairsBlock(SPEARMINT_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_STAIRS)));
     public static final Block SPEARMINT_SLAB = RegisterBlock("spearmint_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)));

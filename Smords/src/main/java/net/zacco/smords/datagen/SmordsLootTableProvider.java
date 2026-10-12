@@ -40,6 +40,9 @@ public class SmordsLootTableProvider extends FabricBlockLootTableProvider
         addDrop(SmordsBlocks.SPEARMINT_BUTTON);
         addDrop(SmordsBlocks.SPEARMINT_PRESSURE_PLATE);
 
+        // Breaking the formed refinery gives the plank back
+        addDrop(SmordsBlocks.SPEARMINT_REFINERY, SmordsBlocks.SPEARMINT_PLANKS);
+
         // Wall variants use dropsLike(), so they share these tables
         addDrop(SmordsBlocks.SPEARMINT_SIGN);
         addDrop(SmordsBlocks.SPEARMINT_HANGING_SIGN);

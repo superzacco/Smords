@@ -5,6 +5,8 @@ import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.zacco.smords.block.SmordsBlocks;
+import net.zacco.smords.block.entity.SmordsBlockEntities;
+import net.zacco.smords.screen.SmordsScreenHandlers;
 import net.zacco.smords.item.SmordsItemGroups;
 import net.zacco.smords.item.SmordsItems;
 import net.zacco.smords.multiblock.SpearmintRefinery;
@@ -27,6 +29,8 @@ public class Smords implements ModInitializer {
 
 		SmordsItems.RegisterSmordsItems();
 		SmordsBlocks.RegisterSmordsBlocks();
+		SmordsBlockEntities.RegisterSmordsBlockEntities();
+		SmordsScreenHandlers.RegisterSmordsScreenHandlers();
 		SmordsFoliagePlacerTypes.RegisterSmordsFoliagePlacerTypes();
 		SmordsTreeDecoratorTypes.RegisterSmordsTreeDecoratorTypes();
 		SmordsWorldGeneration.GenerateSmordsWorldGen();

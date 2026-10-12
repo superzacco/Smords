@@ -11,6 +11,7 @@
     "block.smords.spearmint_sapling": "Spearmint Sapling",
     "block.smords.potted_spearmint_sapling": "Potted Spearmint Sapling",
     "block.smords.spearmint_bulb": "Spearmint Bulb",
+    "block.smords.spearmint_refinery": "Spearmint Refinery",
     "block.smords.spearmint_button": "Spearmint Button",
     "block.smords.spearmint_pressure_plate": "Spearmint Pressure Plate",
     "block.smords.spearmint_fence": "Spearmint Fence",
@@ -29,5 +30,6 @@
 
     "itemgroup.smords": "Smords",
 
-    "message.smords.refinery.not_enough": "The refinery needs %s Spearmint"
+    "container.smords.spearmint_refinery": "Spearmint Refinery",
+    "container.smords.spearmint_refinery.incomplete": "Structure incomplete"
 }

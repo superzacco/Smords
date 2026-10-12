@@ -2,14 +2,11 @@ package net.zacco.smords.multiblock;
 
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -17,15 +14,16 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.zacco.smords.block.SmordsBlocks;
-import net.zacco.smords.item.SmordsItems;
+import net.zacco.smords.block.entity.SpearmintRefineryBlockEntity;
 
 /**
  * A three-layer multiblock that refines Spearmint into Spearmint Extract.
- * Right-click the top block with Spearmint to refine one batch, or sneak to refine the whole stack.
+ * Build it out of spearmint planks, then right-click the top block to form it. The top block
+ * becomes a SpearmintRefineryBlock, which has the GUI and does the actual refining.
  */
 public class SpearmintRefinery
 {
-    // How much Spearmint makes one Spearmint Extract
+    // How much Spearmint makes one Spearmint Extract (each batch takes SpearmintRefineryBlockEntity.PROCESS_TIME)
     public static final int SPEARMINT_PER_EXTRACT = 3;
 
     // Each layer seen from above, bottom layer first. P = structure block, . = must be empty
@@ -46,7 +44,7 @@ public class SpearmintRefinery
     // Placeholder until the refinery gets its own blocks
     public static boolean IsStructureBlock(BlockState state)
     {
-        return state.isOf(SmordsBlocks.SPEARMINT_PLANKS);
+        return state.isOf(SmordsBlocks.SPEARMINT_PLANKS) || state.isOf(SmordsBlocks.SPEARMINT_REFINERY);
     }
 
     // top is the single block on the top layer
@@ -78,58 +76,30 @@ public class SpearmintRefinery
         UseBlockCallback.EVENT.register(SpearmintRefinery::OnUseBlock);
     }
 
+    // Right-clicking the top plank of a finished structure forms the refinery and opens it
     private static ActionResult OnUseBlock(PlayerEntity player, World world, Hand hand, BlockHitResult hit)
     {
-        ItemStack stack = player.getStackInHand(hand);
         BlockPos top = hit.getBlockPos();
 
-        if (player.isSpectator() || !stack.isOf(SmordsItems.SPEARMINT) || !IsComplete(world, top))
+        // Sneak to place blocks against the structure like normal
+        if (player.isSpectator() || player.isSneaking() || hand != Hand.MAIN_HAND
+                || !world.getBlockState(top).isOf(SmordsBlocks.SPEARMINT_PLANKS) || !IsComplete(world, top))
         {
             return ActionResult.PASS;
         }
 
-        if (stack.getCount() < SPEARMINT_PER_EXTRACT && !player.isCreative())
+        if (!world.isClient)
         {
-            // A failed click never reaches the server, so the message is shown client-side
-            if (world.isClient)
+            world.setBlockState(top, SmordsBlocks.SPEARMINT_REFINERY.getDefaultState());
+            if (world.getBlockEntity(top) instanceof SpearmintRefineryBlockEntity refinery)
             {
-                player.sendMessage(Text.translatable("message.smords.refinery.not_enough", SPEARMINT_PER_EXTRACT), true);
+                player.openHandledScreen(refinery);
             }
-            return ActionResult.FAIL;
-        }
 
-        if (world.isClient)
-        {
-            return ActionResult.SUCCESS;
+            Vec3d center = Vec3d.ofCenter(top);
+            world.playSound(null, top, SoundEvents.BLOCK_BEACON_ACTIVATE, SoundCategory.BLOCKS, 0.6f, 1.5f);
+            ((ServerWorld) world).spawnParticles(ParticleTypes.HAPPY_VILLAGER, center.x, center.y, center.z, 16, 0.6, 0.6, 0.6, 0.0);
         }
-
-        // Sneak to refine as much of the stack as possible
-        int batches = player.isSneaking() ? Math.max(1, stack.getCount() / SPEARMINT_PER_EXTRACT) : 1;
-        if (!player.isCreative())
-        {
-            stack.decrement(batches * SPEARMINT_PER_EXTRACT);
-        }
-
-        Refine((ServerWorld) world, top, batches);
         return ActionResult.SUCCESS;
-    }
-
-    private static void Refine(ServerWorld world, BlockPos top, int amount)
-    {
-        Vec3d output = Vec3d.ofCenter(top.up());
-
-        // Split into stacks in case it's more than one stack's worth
-        int maxStack = SmordsItems.SPEARMINT_EXTRACT.getMaxCount();
-        while (amount > 0)
-        {
-            int count = Math.min(amount, maxStack);
-            ItemEntity item = new ItemEntity(world, output.x, output.y, output.z, new ItemStack(SmordsItems.SPEARMINT_EXTRACT, count));
-            item.setVelocity(0, 0.2, 0);
-            world.spawnEntity(item);
-            amount -= count;
-        }
-
-        world.playSound(null, top, SoundEvents.BLOCK_BREWING_STAND_BREW, SoundCategory.BLOCKS, 1.0f, 1.2f);
-        world.spawnParticles(ParticleTypes.HAPPY_VILLAGER, output.x, output.y, output.z, 12, 0.4, 0.3, 0.4, 0.0);
     }
 }

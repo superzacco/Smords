@@ -3,6 +3,7 @@ package net.zacco.smords.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
+import net.minecraft.data.client.ModelIds;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import net.zacco.smords.block.SmordsBlocks;
@@ -26,6 +27,9 @@ public class SmordsModelProvider extends FabricModelProvider
 
         generator.registerSimpleCubeAll(SmordsBlocks.SPEARMINT_LEAVES);
         generator.registerSimpleCubeAll(SmordsBlocks.SPEARMINT_BULB);
+
+        // The formed refinery looks like spearmint planks for now
+        generator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(SmordsBlocks.SPEARMINT_REFINERY, ModelIds.getBlockModelId(SmordsBlocks.SPEARMINT_PLANKS)));
         generator.registerFlowerPotPlant(SmordsBlocks.SPEARMINT_SAPLING, SmordsBlocks.POTTED_SPEARMINT_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         generator.registerHangingSign(SmordsBlocks.STRIPPED_SPEARMINT_LOG, SmordsBlocks.SPEARMINT_HANGING_SIGN, SmordsBlocks.SPEARMINT_WALL_HANGING_SIGN);
