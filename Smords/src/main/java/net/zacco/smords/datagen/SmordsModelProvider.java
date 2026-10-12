@@ -24,6 +24,9 @@ public class SmordsModelProvider extends FabricModelProvider
         // Planks, stairs, slab, fence, gate, door, trapdoor, button, pressure plate, sign
         generator.registerCubeAllModelTexturePool(SmordsBlocks.SPEARMINT_PLANKS).family(SmordsBlocks.SPEARMINT_FAMILY);
 
+        generator.registerSimpleCubeAll(SmordsBlocks.SPEARMINT_LEAVES);
+        generator.registerFlowerPotPlant(SmordsBlocks.SPEARMINT_SAPLING, SmordsBlocks.POTTED_SPEARMINT_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+
         generator.registerHangingSign(SmordsBlocks.STRIPPED_SPEARMINT_LOG, SmordsBlocks.SPEARMINT_HANGING_SIGN, SmordsBlocks.SPEARMINT_WALL_HANGING_SIGN);
     }
 

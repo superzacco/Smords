@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "smords:spearmint_checked",
+    "features": [
+      {
+        "chance": 0.25,
+        "feature": "smords:tall_spearmint_checked"
+      },
+      {
+        "chance": 0.2,
+        "feature": "smords:spearmint_shrub_checked"
+      },
+      {
+        "chance": 0.05,
+        "feature": "smords:giant_spearmint_checked"
+      }
+    ]
+  }
+}

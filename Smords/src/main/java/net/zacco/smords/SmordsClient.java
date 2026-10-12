@@ -13,7 +13,8 @@ public class SmordsClient implements ClientModInitializer
     public void onInitializeClient()
     {
         // Doors and trapdoors have see-through holes in their textures
-        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), SmordsBlocks.SPEARMINT_DOOR, SmordsBlocks.SPEARMINT_TRAPDOOR);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), SmordsBlocks.SPEARMINT_DOOR, SmordsBlocks.SPEARMINT_TRAPDOOR,
+                SmordsBlocks.SPEARMINT_SAPLING, SmordsBlocks.POTTED_SPEARMINT_SAPLING);
 
         TerraformBoatClientHelper.registerModelLayers(SmordsItems.SPEARMINT_BOAT_ID, false);
     }

@@ -16,6 +16,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.zacco.smords.entity.SmordsSignTypes;
+import net.zacco.smords.world.tree.SpearmintSaplingGenerator;
 
 public class SmordsBlocks
 {
@@ -29,6 +30,9 @@ public class SmordsBlocks
     public static final Block STRIPPED_SPEARMINT_LOG = RegisterBlock("stripped_spearmint_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)));
     public static final Block SPEARMINT_WOOD = RegisterBlock("spearmint_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
     public static final Block STRIPPED_SPEARMINT_WOOD = RegisterBlock("stripped_spearmint_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
+    public static final Block SPEARMINT_LEAVES = RegisterBlock("spearmint_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
+    public static final Block SPEARMINT_SAPLING = RegisterBlock("spearmint_sapling", new SmordsSaplingBlock(new SpearmintSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+    public static final Block POTTED_SPEARMINT_SAPLING = RegisterBlockNoItem("potted_spearmint_sapling", new FlowerPotBlock(SPEARMINT_SAPLING, FabricBlockSettings.copyOf(Blocks.POTTED_OAK_SAPLING)));
     public static final Block SPEARMINT_STAIRS = RegisterBlock("spearmint_stairs", new StairsBlock(SPEARMINT_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_STAIRS)));
     public static final Block SPEARMINT_SLAB = RegisterBlock("spearmint_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)));
     public static final Block SPEARMINT_BUTTON = RegisterBlock("spearmint_button", new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), SmordsSignTypes.SPEARMINT_SET, 30, true));

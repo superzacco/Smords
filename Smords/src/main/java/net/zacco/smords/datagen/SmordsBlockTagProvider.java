@@ -40,6 +40,11 @@ public class SmordsBlockTagProvider extends FabricTagProvider.BlockTagProvider
         getOrCreateTagBuilder(BlockTags.CEILING_HANGING_SIGNS).add(SPEARMINT_HANGING_SIGN);
         getOrCreateTagBuilder(BlockTags.WALL_HANGING_SIGNS).add(SPEARMINT_WALL_HANGING_SIGN);
 
+        getOrCreateTagBuilder(BlockTags.LEAVES).add(SPEARMINT_LEAVES);
+        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE).add(SPEARMINT_LEAVES);
+        getOrCreateTagBuilder(BlockTags.SAPLINGS).add(SPEARMINT_SAPLING);
+        getOrCreateTagBuilder(BlockTags.FLOWER_POTS).add(POTTED_SPEARMINT_SAPLING);
+
         // Axes break the whole set quickly
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
                 .addTag(SmordsTags.Blocks.SPEARMINT_LOGS)

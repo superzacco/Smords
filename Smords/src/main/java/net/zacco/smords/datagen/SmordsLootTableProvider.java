@@ -18,6 +18,9 @@ public class SmordsLootTableProvider extends FabricBlockLootTableProvider
         addDrop(SmordsBlocks.SPEARMINT_WOOD);
         addDrop(SmordsBlocks.STRIPPED_SPEARMINT_LOG);
         addDrop(SmordsBlocks.STRIPPED_SPEARMINT_WOOD);
+        addDrop(SmordsBlocks.SPEARMINT_LEAVES, leavesDrops(SmordsBlocks.SPEARMINT_LEAVES, SmordsBlocks.SPEARMINT_SAPLING, SAPLING_DROP_CHANCE));
+        addDrop(SmordsBlocks.SPEARMINT_SAPLING);
+        addPottedPlantDrops(SmordsBlocks.POTTED_SPEARMINT_SAPLING);
         addDrop(SmordsBlocks.SPEARMINT_PLANKS);
         addDrop(SmordsBlocks.SPEARMINT_STAIRS);
         addDrop(SmordsBlocks.SPEARMINT_SLAB, slabDrops(SmordsBlocks.SPEARMINT_SLAB));

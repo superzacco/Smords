@@ -23,6 +23,8 @@ public class SmordsItemGroups
                         entries.add(SmordsBlocks.SPEARMINT_WOOD);
                         entries.add(SmordsBlocks.STRIPPED_SPEARMINT_LOG);
                         entries.add(SmordsBlocks.STRIPPED_SPEARMINT_WOOD);
+                        entries.add(SmordsBlocks.SPEARMINT_LEAVES);
+                        entries.add(SmordsBlocks.SPEARMINT_SAPLING);
                         entries.add(SmordsBlocks.SPEARMINT_STAIRS);
                         entries.add(SmordsBlocks.SPEARMINT_SLAB);
                         entries.add(SmordsBlocks.SPEARMINT_FENCE);
