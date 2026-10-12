@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "smords:block/spearmint_slab"
+    },
+    "type=double": {
+      "model": "smords:block/spearmint_planks"
+    },
+    "type=top": {
+      "model": "smords:block/spearmint_slab_top"
+    }
+  }
+}

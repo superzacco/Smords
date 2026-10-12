@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "smords:spearmint_log",
+    "smords:spearmint_wood",
+    "smords:stripped_spearmint_log",
+    "smords:stripped_spearmint_wood"
+  ]
+}

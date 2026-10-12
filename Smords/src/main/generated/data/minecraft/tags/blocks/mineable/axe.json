@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "#smords:spearmint_logs",
+    "smords:spearmint_planks",
+    "smords:spearmint_stairs",
+    "smords:spearmint_slab",
+    "smords:spearmint_fence",
+    "smords:spearmint_fence_gate",
+    "smords:spearmint_door",
+    "smords:spearmint_trapdoor",
+    "smords:spearmint_button",
+    "smords:spearmint_pressure_plate",
+    "smords:spearmint_sign",
+    "smords:spearmint_wall_sign",
+    "smords:spearmint_hanging_sign",
+    "smords:spearmint_wall_hanging_sign"
+  ]
+}

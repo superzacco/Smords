@@ -17,20 +17,28 @@ public class SmordsItemGroups
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.smords"))
                     .icon(() -> new ItemStack(SmordsBlocks.SPEARMINT_PLANKS)).entries((displayContext, entries) -> {
 
-                        //#region ITEMS
-                        //#endregion
-
                         //#region BLOCKS
                         entries.add(SmordsBlocks.SPEARMINT_PLANKS);
                         entries.add(SmordsBlocks.SPEARMINT_LOG);
                         entries.add(SmordsBlocks.SPEARMINT_WOOD);
                         entries.add(SmordsBlocks.STRIPPED_SPEARMINT_LOG);
                         entries.add(SmordsBlocks.STRIPPED_SPEARMINT_WOOD);
-                        entries.add(SmordsBlocks.SPEARMINT_BUTTON);
-                        entries.add(SmordsBlocks.SPEARMINT_PRESSURE_PLATE);
+                        entries.add(SmordsBlocks.SPEARMINT_STAIRS);
+                        entries.add(SmordsBlocks.SPEARMINT_SLAB);
                         entries.add(SmordsBlocks.SPEARMINT_FENCE);
                         entries.add(SmordsBlocks.SPEARMINT_FENCE_GATE);
+                        entries.add(SmordsBlocks.SPEARMINT_DOOR);
+                        entries.add(SmordsBlocks.SPEARMINT_TRAPDOOR);
+                        entries.add(SmordsBlocks.SPEARMINT_PRESSURE_PLATE);
+                        entries.add(SmordsBlocks.SPEARMINT_BUTTON);
 
+                        //#endregion
+
+                        //#region ITEMS
+                        entries.add(SmordsItems.SPEARMINT_SIGN);
+                        entries.add(SmordsItems.SPEARMINT_HANGING_SIGN);
+                        entries.add(SmordsItems.SPEARMINT_BOAT);
+                        entries.add(SmordsItems.SPEARMINT_CHEST_BOAT);
                         //#endregion
 
                     }).build());

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "smords:spearmint_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "smords:spearmint_planks"
+  }
+}

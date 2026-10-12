@@ -11,6 +11,15 @@
     "block.smords.spearmint_pressure_plate": "Spearmint Pressure Plate",
     "block.smords.spearmint_fence": "Spearmint Fence",
     "block.smords.spearmint_fence_gate": "Spearmint Fence Gate",
+    "block.smords.spearmint_stairs": "Spearmint Stairs",
+    "block.smords.spearmint_slab": "Spearmint Slab",
+    "block.smords.spearmint_door": "Spearmint Door",
+    "block.smords.spearmint_trapdoor": "Spearmint Trapdoor",
+    "block.smords.spearmint_sign": "Spearmint Sign",
+    "block.smords.spearmint_hanging_sign": "Spearmint Hanging Sign",
+
+    "item.smords.spearmint_boat": "Spearmint Boat",
+    "item.smords.spearmint_chest_boat": "Spearmint Boat with Chest",
 
     "itemgroup.smords": "Smords"
 }

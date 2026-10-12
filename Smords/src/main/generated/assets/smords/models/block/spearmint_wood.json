@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "smords:block/spearmint_log",
+    "side": "smords:block/spearmint_log"
+  }
+}
