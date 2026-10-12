@@ -2,6 +2,7 @@ package net.zacco.smords.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
@@ -18,6 +19,9 @@ public class SmordsLootTableProvider extends FabricBlockLootTableProvider
     @Override
     public void generate()
     {
+        // Dirt, or itself with Silk Touch, like vanilla grass
+        addDrop(SmordsBlocks.MINT_GRASS_BLOCK, drops(SmordsBlocks.MINT_GRASS_BLOCK, Blocks.DIRT));
+
         addDrop(SmordsBlocks.SPEARMINT_LOG);
         addDrop(SmordsBlocks.SPEARMINT_WOOD);
         addDrop(SmordsBlocks.STRIPPED_SPEARMINT_LOG);
@@ -25,9 +29,9 @@ public class SmordsLootTableProvider extends FabricBlockLootTableProvider
         addDrop(SmordsBlocks.SPEARMINT_LEAVES, leavesDrops(SmordsBlocks.SPEARMINT_LEAVES, SmordsBlocks.SPEARMINT_SAPLING, SAPLING_DROP_CHANCE));
         addDrop(SmordsBlocks.SPEARMINT_SAPLING);
 
-        // 2-3 Spearmint, or the bulb itself with Silk Touch
+        // 2-3 Spearmint Chunks, or the bulb itself with Silk Touch
         addDrop(SmordsBlocks.SPEARMINT_BULB, dropsWithSilkTouch(SmordsBlocks.SPEARMINT_BULB,
-                applyExplosionDecay(SmordsBlocks.SPEARMINT_BULB, ItemEntry.builder(SmordsItems.SPEARMINT)
+                applyExplosionDecay(SmordsBlocks.SPEARMINT_BULB, ItemEntry.builder(SmordsItems.SPEARMINT_CHUNK)
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 3.0f))))));
         addPottedPlantDrops(SmordsBlocks.POTTED_SPEARMINT_SAPLING);
         addDrop(SmordsBlocks.SPEARMINT_PLANKS);

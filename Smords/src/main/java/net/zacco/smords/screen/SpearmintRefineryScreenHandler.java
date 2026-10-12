@@ -31,13 +31,13 @@ public class SpearmintRefineryScreenHandler extends ScreenHandler
         this.properties = properties;
         inventory.onOpen(playerInventory.player);
 
-        // Only Spearmint goes in the input
+        // Only Spearmint Chunks go in the input
         addSlot(new Slot(inventory, SpearmintRefineryBlockEntity.INPUT_SLOT, 56, 35)
         {
             @Override
             public boolean canInsert(ItemStack stack)
             {
-                return stack.isOf(SmordsItems.SPEARMINT);
+                return stack.isOf(SmordsItems.SPEARMINT_CHUNK);
             }
         });
 
@@ -101,7 +101,7 @@ public class SpearmintRefineryScreenHandler extends ScreenHandler
                 return ItemStack.EMPTY;
             }
         }
-        else if (stack.isOf(SmordsItems.SPEARMINT))
+        else if (stack.isOf(SmordsItems.SPEARMINT_CHUNK))
         {
             // Player -> input slot
             if (!insertItem(stack, SpearmintRefineryBlockEntity.INPUT_SLOT, SpearmintRefineryBlockEntity.INPUT_SLOT + 1, false))

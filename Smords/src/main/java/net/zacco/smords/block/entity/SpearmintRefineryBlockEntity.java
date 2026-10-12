@@ -88,12 +88,12 @@ public class SpearmintRefineryBlockEntity extends BlockEntity implements NamedSc
         if (refinery.progress >= PROCESS_TIME)
         {
             refinery.progress = 0;
-            refinery.inventory.get(INPUT_SLOT).decrement(SpearmintRefinery.SPEARMINT_PER_EXTRACT);
+            refinery.inventory.get(INPUT_SLOT).decrement(SpearmintRefinery.CHUNKS_PER_LEAF);
 
             ItemStack output = refinery.inventory.get(OUTPUT_SLOT);
             if (output.isEmpty())
             {
-                refinery.inventory.set(OUTPUT_SLOT, new ItemStack(SmordsItems.SPEARMINT_EXTRACT));
+                refinery.inventory.set(OUTPUT_SLOT, new ItemStack(SmordsItems.SPEARMINT_LEAF));
             }
             else
             {
@@ -110,8 +110,8 @@ public class SpearmintRefineryBlockEntity extends BlockEntity implements NamedSc
         ItemStack input = inventory.get(INPUT_SLOT);
         ItemStack output = inventory.get(OUTPUT_SLOT);
 
-        boolean enoughInput = input.isOf(SmordsItems.SPEARMINT) && input.getCount() >= SpearmintRefinery.SPEARMINT_PER_EXTRACT;
-        boolean roomForOutput = output.isEmpty() || (output.isOf(SmordsItems.SPEARMINT_EXTRACT) && output.getCount() < output.getMaxCount());
+        boolean enoughInput = input.isOf(SmordsItems.SPEARMINT_CHUNK) && input.getCount() >= SpearmintRefinery.CHUNKS_PER_LEAF;
+        boolean roomForOutput = output.isEmpty() || (output.isOf(SmordsItems.SPEARMINT_LEAF) && output.getCount() < output.getMaxCount());
         return enoughInput && roomForOutput;
     }
 
@@ -148,7 +148,7 @@ public class SpearmintRefineryBlockEntity extends BlockEntity implements NamedSc
     }
     //#endregion
 
-    //#region Inventory (hoppers put Spearmint in from the top or sides, and take Extract out from the bottom)
+    //#region Inventory (hoppers put chunks in from the top or sides, and take leaves out from the bottom)
     @Override
     public int[] getAvailableSlots(Direction side)
     {
@@ -170,7 +170,7 @@ public class SpearmintRefineryBlockEntity extends BlockEntity implements NamedSc
     @Override
     public boolean isValid(int slot, ItemStack stack)
     {
-        return slot == INPUT_SLOT && stack.isOf(SmordsItems.SPEARMINT);
+        return slot == INPUT_SLOT && stack.isOf(SmordsItems.SPEARMINT_CHUNK);
     }
 
     @Override

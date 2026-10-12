@@ -20,6 +20,10 @@ repositories {
 		name = 'TerraformersMC'
 		url = 'https://maven.terraformersmc.com/releases/'
 	}
+	maven {
+		name = 'MinecraftForge'
+		url = 'https://maven.minecraftforge.net/'
+	}
 }
 
 loom {
@@ -59,6 +63,10 @@ dependencies {
 	// Terraform Wood API handles custom signs and boats. "include" bundles it inside the mod jar.
 	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}"
 	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}"
+
+	// TerraBlender adds the Spearmint Grove to overworld generation
+	modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.minecraft_version}-${project.terrablender_version}"
+	include "com.github.glitchfiend:TerraBlender-fabric:${project.minecraft_version}-${project.terrablender_version}"
 	
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.

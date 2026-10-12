@@ -17,14 +17,14 @@ import net.zacco.smords.block.SmordsBlocks;
 import net.zacco.smords.block.entity.SpearmintRefineryBlockEntity;
 
 /**
- * A three-layer multiblock that refines Spearmint into Spearmint Extract.
+ * A three-layer multiblock that refines Spearmint Chunks into Spearmint Leaves.
  * Build it out of spearmint planks, then right-click the top block to form it. The top block
  * becomes a SpearmintRefineryBlock, which has the GUI and does the actual refining.
  */
 public class SpearmintRefinery
 {
-    // How much Spearmint makes one Spearmint Extract (each batch takes SpearmintRefineryBlockEntity.PROCESS_TIME)
-    public static final int SPEARMINT_PER_EXTRACT = 3;
+    // How many Spearmint Chunks make one Spearmint Leaf (each batch takes SpearmintRefineryBlockEntity.PROCESS_TIME)
+    public static final int CHUNKS_PER_LEAF = 3;
 
     // Each layer seen from above, bottom layer first. P = structure block, . = must be empty
     private static final String[][] PATTERN = {

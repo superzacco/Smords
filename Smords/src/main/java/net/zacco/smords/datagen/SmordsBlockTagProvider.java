@@ -40,6 +40,12 @@ public class SmordsBlockTagProvider extends FabricTagProvider.BlockTagProvider
         getOrCreateTagBuilder(BlockTags.CEILING_HANGING_SIGNS).add(SPEARMINT_HANGING_SIGN);
         getOrCreateTagBuilder(BlockTags.WALL_HANGING_SIGNS).add(SPEARMINT_WALL_HANGING_SIGN);
 
+        // Lets plants, saplings and animals treat mint grass like regular grass
+        getOrCreateTagBuilder(BlockTags.DIRT).add(MINT_GRASS_BLOCK);
+        getOrCreateTagBuilder(BlockTags.ANIMALS_SPAWNABLE_ON).add(MINT_GRASS_BLOCK);
+        getOrCreateTagBuilder(BlockTags.VALID_SPAWN).add(MINT_GRASS_BLOCK);
+        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE).add(MINT_GRASS_BLOCK);
+
         getOrCreateTagBuilder(BlockTags.LEAVES).add(SPEARMINT_LEAVES);
         getOrCreateTagBuilder(BlockTags.HOE_MINEABLE).add(SPEARMINT_LEAVES, SPEARMINT_BULB);
         getOrCreateTagBuilder(BlockTags.SAPLINGS).add(SPEARMINT_SAPLING);

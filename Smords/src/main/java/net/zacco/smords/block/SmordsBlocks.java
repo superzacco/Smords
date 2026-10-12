@@ -20,6 +20,10 @@ import net.zacco.smords.world.tree.SpearmintSaplingGenerator;
 
 public class SmordsBlocks
 {
+    //#region Spearmint Grove
+    public static final Block MINT_GRASS_BLOCK = RegisterBlock("mint_grass_block", new GrassBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).mapColor(MapColor.EMERALD_GREEN)));
+    //#endregion
+
     //#region Spearmint
     private static final Identifier SPEARMINT_SIGN_TEXTURE = new Identifier(Smords.MOD_ID, "entity/signs/spearmint");
     private static final Identifier SPEARMINT_HANGING_SIGN_TEXTURE = new Identifier(Smords.MOD_ID, "entity/signs/hanging/spearmint");

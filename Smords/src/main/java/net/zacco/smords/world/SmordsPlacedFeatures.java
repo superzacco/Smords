@@ -23,7 +23,7 @@ public class SmordsPlacedFeatures
     public static final RegistryKey<PlacedFeature> SPEARMINT_SHRUB_CHECKED = RegisterKey("spearmint_shrub_checked");
     public static final RegistryKey<PlacedFeature> GIANT_SPEARMINT_CHECKED = RegisterKey("giant_spearmint_checked");
 
-    // Scattered through biomes by SmordsWorldGeneration
+    // Spearmint Grove trees
     public static final RegistryKey<PlacedFeature> SPEARMINT_TREES_PLACED = RegisterKey("spearmint_trees_placed");
 
     public static void Bootstrap(Registerable<PlacedFeature> context)
@@ -35,9 +35,9 @@ public class SmordsPlacedFeatures
         Register(context, SPEARMINT_SHRUB_CHECKED, configured.getOrThrow(SmordsConfiguredFeatures.SPEARMINT_SHRUB), List.of(PlacedFeatures.wouldSurvive(SmordsBlocks.SPEARMINT_SAPLING)));
         Register(context, GIANT_SPEARMINT_CHECKED, configured.getOrThrow(SmordsConfiguredFeatures.GIANT_SPEARMINT), List.of(PlacedFeatures.wouldSurvive(SmordsBlocks.SPEARMINT_SAPLING)));
 
-        // 0 trees per chunk, with a 10% chance of 1 extra
+        // 6 trees per chunk, with a 10% chance of 1 extra
         Register(context, SPEARMINT_TREES_PLACED, configured.getOrThrow(SmordsConfiguredFeatures.SPEARMINT_TREES),
-                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(0, 0.1f, 1)));
+                VegetationPlacedFeatures.treeModifiers(PlacedFeatures.createCountExtraModifier(6, 0.1f, 1)));
     }
 
     public static RegistryKey<PlacedFeature> RegisterKey(String name)

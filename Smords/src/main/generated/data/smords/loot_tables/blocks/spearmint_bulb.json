@@ -42,7 +42,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "smords:spearmint"
+              "name": "smords:spearmint_chunk"
             }
           ]
         }

@@ -2,6 +2,8 @@
     "item.smords.test_ingot": "Test Ingot",
     "item.smords.sludge": "Sludge",
 
+    "block.smords.mint_grass_block": "Mint Grass Block",
+
     "block.smords.spearmint_planks": "Spearmint Planks",
     "block.smords.spearmint_log": "Spearmint Log",
     "block.smords.spearmint_wood": "Spearmint Wood",
@@ -23,12 +25,13 @@
     "block.smords.spearmint_sign": "Spearmint Sign",
     "block.smords.spearmint_hanging_sign": "Spearmint Hanging Sign",
 
-    "item.smords.spearmint": "Spearmint",
-    "item.smords.spearmint_extract": "Spearmint Extract",
+    "item.smords.spearmint_chunk": "Spearmint Chunk",
+    "item.smords.spearmint_leaf": "Spearmint Leaf",
     "item.smords.spearmint_boat": "Spearmint Boat",
     "item.smords.spearmint_chest_boat": "Spearmint Boat with Chest",
 
     "itemgroup.smords": "Smords",
+    "biome.smords.spearmint_grove": "Spearmint Grove",
 
     "container.smords.spearmint_refinery": "Spearmint Refinery",
     "container.smords.spearmint_refinery.incomplete": "Structure incomplete"

@@ -6,6 +6,7 @@ import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 import net.zacco.smords.world.SmordsConfiguredFeatures;
 import net.zacco.smords.world.SmordsPlacedFeatures;
+import net.zacco.smords.world.biome.SmordsBiomes;
 import net.zacco.smords.datagen.*;
 
 public class SmordsDataGenerator implements DataGeneratorEntrypoint {
@@ -26,5 +27,6 @@ public class SmordsDataGenerator implements DataGeneratorEntrypoint {
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, SmordsConfiguredFeatures::Bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, SmordsPlacedFeatures::Bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.BIOME, SmordsBiomes::Bootstrap);
 	}
 }

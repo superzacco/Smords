@@ -18,6 +18,7 @@ public class SmordsItemGroups
                     .icon(() -> new ItemStack(SmordsBlocks.SPEARMINT_PLANKS)).entries((displayContext, entries) -> {
 
                         //#region BLOCKS
+                        entries.add(SmordsBlocks.MINT_GRASS_BLOCK);
                         entries.add(SmordsBlocks.SPEARMINT_PLANKS);
                         entries.add(SmordsBlocks.SPEARMINT_LOG);
                         entries.add(SmordsBlocks.SPEARMINT_WOOD);
@@ -38,8 +39,8 @@ public class SmordsItemGroups
                         //#endregion
 
                         //#region ITEMS
-                        entries.add(SmordsItems.SPEARMINT);
-                        entries.add(SmordsItems.SPEARMINT_EXTRACT);
+                        entries.add(SmordsItems.SPEARMINT_CHUNK);
+                        entries.add(SmordsItems.SPEARMINT_LEAF);
                         entries.add(SmordsItems.SPEARMINT_SIGN);
                         entries.add(SmordsItems.SPEARMINT_HANGING_SIGN);
                         entries.add(SmordsItems.SPEARMINT_BOAT);

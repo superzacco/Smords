@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "smords:item/spearmint_extract"
+    "layer0": "smords:item/spearmint_chunk"
   }
 }

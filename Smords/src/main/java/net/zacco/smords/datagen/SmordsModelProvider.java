@@ -4,6 +4,9 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ModelIds;
+import net.minecraft.data.client.TextureKey;
+import net.minecraft.data.client.TextureMap;
+import net.minecraft.data.client.TexturedModel;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import net.zacco.smords.block.SmordsBlocks;
@@ -19,6 +22,13 @@ public class SmordsModelProvider extends FabricModelProvider
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator generator)
     {
+        // Mint grass textures are already coloured, so unlike vanilla grass there's no tint overlay
+        generator.registerSingleton(SmordsBlocks.MINT_GRASS_BLOCK, TexturedModel.makeFactory(block -> new TextureMap()
+                .put(TextureKey.TOP, TextureMap.getSubId(block, "_top"))
+                .put(TextureKey.SIDE, TextureMap.getSubId(block, "_side"))
+                .put(TextureKey.BOTTOM, TextureMap.getSubId(block, "_bottom"))
+                .put(TextureKey.PARTICLE, TextureMap.getSubId(block, "_bottom")), Models.CUBE_BOTTOM_TOP));
+
         generator.registerLog(SmordsBlocks.SPEARMINT_LOG).log(SmordsBlocks.SPEARMINT_LOG).wood(SmordsBlocks.SPEARMINT_WOOD);
         generator.registerLog(SmordsBlocks.STRIPPED_SPEARMINT_LOG).log(SmordsBlocks.STRIPPED_SPEARMINT_LOG).wood(SmordsBlocks.STRIPPED_SPEARMINT_WOOD);
 
@@ -38,8 +48,8 @@ public class SmordsModelProvider extends FabricModelProvider
     @Override
     public void generateItemModels(ItemModelGenerator generator)
     {
-        generator.register(SmordsItems.SPEARMINT, Models.GENERATED);
-        generator.register(SmordsItems.SPEARMINT_EXTRACT, Models.GENERATED);
+        generator.register(SmordsItems.SPEARMINT_CHUNK, Models.GENERATED);
+        generator.register(SmordsItems.SPEARMINT_LEAF, Models.GENERATED);
         generator.register(SmordsItems.SPEARMINT_BOAT, Models.GENERATED);
         generator.register(SmordsItems.SPEARMINT_CHEST_BOAT, Models.GENERATED);
     }

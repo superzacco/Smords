@@ -3,14 +3,17 @@ package net.zacco.smords;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.FlattenableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.fabricmc.fabric.api.registry.TillableBlockRegistry;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.HoeItem;
 import net.zacco.smords.block.SmordsBlocks;
 import net.zacco.smords.block.entity.SmordsBlockEntities;
 import net.zacco.smords.screen.SmordsScreenHandlers;
 import net.zacco.smords.item.SmordsItemGroups;
 import net.zacco.smords.item.SmordsItems;
 import net.zacco.smords.multiblock.SpearmintRefinery;
-import net.zacco.smords.world.SmordsWorldGeneration;
 import net.zacco.smords.world.tree.SmordsFoliagePlacerTypes;
 import net.zacco.smords.world.tree.SmordsTreeDecoratorTypes;
 
@@ -33,7 +36,6 @@ public class Smords implements ModInitializer {
 		SmordsScreenHandlers.RegisterSmordsScreenHandlers();
 		SmordsFoliagePlacerTypes.RegisterSmordsFoliagePlacerTypes();
 		SmordsTreeDecoratorTypes.RegisterSmordsTreeDecoratorTypes();
-		SmordsWorldGeneration.GenerateSmordsWorldGen();
 
 		RegisterStrippables();
 		RegisterFlammables();
@@ -42,9 +44,12 @@ public class Smords implements ModInitializer {
 		SpearmintRefinery.RegisterSpearmintRefinery();
 	}
 
-	// Right-clicking with an axe
+	// Right-clicking with an axe, hoe or shovel
 	private static void RegisterStrippables()
 	{
+		TillableBlockRegistry.register(SmordsBlocks.MINT_GRASS_BLOCK, HoeItem::canTillFarmland, Blocks.FARMLAND.getDefaultState());
+		FlattenableBlockRegistry.register(SmordsBlocks.MINT_GRASS_BLOCK, Blocks.DIRT_PATH.getDefaultState());
+
 		StrippableBlockRegistry.register(SmordsBlocks.SPEARMINT_LOG, SmordsBlocks.STRIPPED_SPEARMINT_LOG);
 		StrippableBlockRegistry.register(SmordsBlocks.SPEARMINT_WOOD, SmordsBlocks.STRIPPED_SPEARMINT_WOOD);
 	}
