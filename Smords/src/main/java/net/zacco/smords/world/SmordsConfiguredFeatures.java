@@ -17,6 +17,7 @@ import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacer;
 import net.zacco.smords.Smords;
 import net.zacco.smords.block.SmordsBlocks;
+import net.zacco.smords.world.tree.SpearmintBulbTreeDecorator;
 import net.zacco.smords.world.tree.SpearmintFoliagePlacer;
 
 import java.util.List;
@@ -38,22 +39,22 @@ public class SmordsConfiguredFeatures
         // Regular: 5-7 tall, three or so tiers
         Register(context, SPEARMINT, Feature.TREE, SpearmintTree(
                 new StraightTrunkPlacer(5, 2, 0), 3, UniformIntProvider.create(4, 6), 2,
-                new TwoLayersFeatureSize(1, 0, 1)));
+                new TwoLayersFeatureSize(1, 0, 1), UniformIntProvider.create(1, 3)));
 
         // Tall: a thin spire with tiers spread further apart
         Register(context, TALL_SPEARMINT, Feature.TREE, SpearmintTree(
                 new StraightTrunkPlacer(9, 3, 1), 3, UniformIntProvider.create(7, 10), 3,
-                new TwoLayersFeatureSize(1, 0, 1)));
+                new TwoLayersFeatureSize(1, 0, 1), UniformIntProvider.create(1, 3)));
 
         // Shrub: short trunk with one wide skirt of leaves near the ground
         Register(context, SPEARMINT_SHRUB, Feature.TREE, SpearmintTree(
                 new StraightTrunkPlacer(3, 1, 0), 3, ConstantIntProvider.create(2), 2,
-                new TwoLayersFeatureSize(1, 0, 1)));
+                new TwoLayersFeatureSize(1, 0, 1), UniformIntProvider.create(0, 2)));
 
         // Giant: 2x2 trunk grown from four saplings, wide tiers
         Register(context, GIANT_SPEARMINT, Feature.TREE, SpearmintTree(
                 new GiantTrunkPlacer(13, 2, 4), 5, UniformIntProvider.create(13, 17), 3,
-                new TwoLayersFeatureSize(1, 1, 2)));
+                new TwoLayersFeatureSize(1, 1, 2), UniformIntProvider.create(3, 6)));
 
         RegistryEntryLookup<PlacedFeature> placed = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
         Register(context, SPEARMINT_TREES, Feature.RANDOM_SELECTOR, new RandomFeatureConfig(List.of(
@@ -63,7 +64,7 @@ public class SmordsConfiguredFeatures
                 placed.getOrThrow(SmordsPlacedFeatures.SPEARMINT_CHECKED)));
     }
 
-    private static TreeFeatureConfig SpearmintTree(TrunkPlacer trunk, int radius, IntProvider foliageHeight, int tierSpacing, FeatureSize size)
+    private static TreeFeatureConfig SpearmintTree(TrunkPlacer trunk, int radius, IntProvider foliageHeight, int tierSpacing, FeatureSize size, IntProvider bulbs)
     {
         return new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(SmordsBlocks.SPEARMINT_LOG),
@@ -71,6 +72,7 @@ public class SmordsConfiguredFeatures
                 BlockStateProvider.of(SmordsBlocks.SPEARMINT_LEAVES),
                 new SpearmintFoliagePlacer(ConstantIntProvider.create(radius), ConstantIntProvider.create(0), foliageHeight, tierSpacing),
                 size)
+                .decorators(List.of(new SpearmintBulbTreeDecorator(bulbs)))
                 .ignoreVines()
                 .build();
     }

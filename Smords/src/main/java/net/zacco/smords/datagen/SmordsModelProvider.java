@@ -25,6 +25,7 @@ public class SmordsModelProvider extends FabricModelProvider
         generator.registerCubeAllModelTexturePool(SmordsBlocks.SPEARMINT_PLANKS).family(SmordsBlocks.SPEARMINT_FAMILY);
 
         generator.registerSimpleCubeAll(SmordsBlocks.SPEARMINT_LEAVES);
+        generator.registerSimpleCubeAll(SmordsBlocks.SPEARMINT_BULB);
         generator.registerFlowerPotPlant(SmordsBlocks.SPEARMINT_SAPLING, SmordsBlocks.POTTED_SPEARMINT_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         generator.registerHangingSign(SmordsBlocks.STRIPPED_SPEARMINT_LOG, SmordsBlocks.SPEARMINT_HANGING_SIGN, SmordsBlocks.SPEARMINT_WALL_HANGING_SIGN);
@@ -33,6 +34,8 @@ public class SmordsModelProvider extends FabricModelProvider
     @Override
     public void generateItemModels(ItemModelGenerator generator)
     {
+        generator.register(SmordsItems.SPEARMINT, Models.GENERATED);
+        generator.register(SmordsItems.SPEARMINT_EXTRACT, Models.GENERATED);
         generator.register(SmordsItems.SPEARMINT_BOAT, Models.GENERATED);
         generator.register(SmordsItems.SPEARMINT_CHEST_BOAT, Models.GENERATED);
     }

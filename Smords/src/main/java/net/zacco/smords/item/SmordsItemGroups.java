@@ -25,6 +25,7 @@ public class SmordsItemGroups
                         entries.add(SmordsBlocks.STRIPPED_SPEARMINT_WOOD);
                         entries.add(SmordsBlocks.SPEARMINT_LEAVES);
                         entries.add(SmordsBlocks.SPEARMINT_SAPLING);
+                        entries.add(SmordsBlocks.SPEARMINT_BULB);
                         entries.add(SmordsBlocks.SPEARMINT_STAIRS);
                         entries.add(SmordsBlocks.SPEARMINT_SLAB);
                         entries.add(SmordsBlocks.SPEARMINT_FENCE);
@@ -37,6 +38,8 @@ public class SmordsItemGroups
                         //#endregion
 
                         //#region ITEMS
+                        entries.add(SmordsItems.SPEARMINT);
+                        entries.add(SmordsItems.SPEARMINT_EXTRACT);
                         entries.add(SmordsItems.SPEARMINT_SIGN);
                         entries.add(SmordsItems.SPEARMINT_HANGING_SIGN);
                         entries.add(SmordsItems.SPEARMINT_BOAT);

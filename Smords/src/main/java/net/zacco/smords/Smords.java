@@ -7,8 +7,10 @@ import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.zacco.smords.block.SmordsBlocks;
 import net.zacco.smords.item.SmordsItemGroups;
 import net.zacco.smords.item.SmordsItems;
+import net.zacco.smords.multiblock.SpearmintRefinery;
 import net.zacco.smords.world.SmordsWorldGeneration;
 import net.zacco.smords.world.tree.SmordsFoliagePlacerTypes;
+import net.zacco.smords.world.tree.SmordsTreeDecoratorTypes;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,11 +28,14 @@ public class Smords implements ModInitializer {
 		SmordsItems.RegisterSmordsItems();
 		SmordsBlocks.RegisterSmordsBlocks();
 		SmordsFoliagePlacerTypes.RegisterSmordsFoliagePlacerTypes();
+		SmordsTreeDecoratorTypes.RegisterSmordsTreeDecoratorTypes();
 		SmordsWorldGeneration.GenerateSmordsWorldGen();
 
 		RegisterStrippables();
 		RegisterFlammables();
 		RegisterCompostables();
+
+		SpearmintRefinery.RegisterSpearmintRefinery();
 	}
 
 	// Right-clicking with an axe

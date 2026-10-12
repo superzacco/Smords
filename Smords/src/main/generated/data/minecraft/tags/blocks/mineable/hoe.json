@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "smords:spearmint_leaves"
+    "smords:spearmint_leaves",
+    "smords:spearmint_bulb"
   ]
 }

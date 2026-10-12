@@ -18,6 +18,9 @@ import net.zacco.smords.block.SmordsBlocks;
 public class SmordsItems
 {
     //#region Spearmint
+    public static final Item SPEARMINT = RegisterItem("spearmint", new Item(new FabricItemSettings()));
+    public static final Item SPEARMINT_EXTRACT = RegisterItem("spearmint_extract", new Item(new FabricItemSettings().maxCount(16)));
+
     public static final Identifier SPEARMINT_BOAT_ID = new Identifier(Smords.MOD_ID, "spearmint");
     public static final RegistryKey<TerraformBoatType> SPEARMINT_BOAT_KEY = TerraformBoatTypeRegistry.createKey(SPEARMINT_BOAT_ID);
 

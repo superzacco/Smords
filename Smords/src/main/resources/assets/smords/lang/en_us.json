@@ -10,6 +10,7 @@
     "block.smords.spearmint_leaves": "Spearmint Leaves",
     "block.smords.spearmint_sapling": "Spearmint Sapling",
     "block.smords.potted_spearmint_sapling": "Potted Spearmint Sapling",
+    "block.smords.spearmint_bulb": "Spearmint Bulb",
     "block.smords.spearmint_button": "Spearmint Button",
     "block.smords.spearmint_pressure_plate": "Spearmint Pressure Plate",
     "block.smords.spearmint_fence": "Spearmint Fence",
@@ -21,8 +22,12 @@
     "block.smords.spearmint_sign": "Spearmint Sign",
     "block.smords.spearmint_hanging_sign": "Spearmint Hanging Sign",
 
+    "item.smords.spearmint": "Spearmint",
+    "item.smords.spearmint_extract": "Spearmint Extract",
     "item.smords.spearmint_boat": "Spearmint Boat",
     "item.smords.spearmint_chest_boat": "Spearmint Boat with Chest",
 
-    "itemgroup.smords": "Smords"
+    "itemgroup.smords": "Smords",
+
+    "message.smords.refinery.not_enough": "The refinery needs %s Spearmint"
 }
